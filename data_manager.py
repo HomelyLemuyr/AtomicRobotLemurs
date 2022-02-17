@@ -1,5 +1,5 @@
 #
-from io_manager import *
+import io_manager as io_manager
 
 class DataManager:
     def __init__(self):
@@ -7,6 +7,11 @@ class DataManager:
 
     def initialize(self):
         # Run the input manager
-        self.inputs = get_inputs()
-        print(f"These are the inputs: {self.inputs}")
+        self.inputs = io_manager.get_inputs()
         return True
+
+    def check_input(self):
+        for input in self.inputs:
+            io_manager.classify_input(input)
+
+    

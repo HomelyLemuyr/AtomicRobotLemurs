@@ -8,3 +8,7 @@ def get_inputs():
         if i != " ":
             nums.append(i)
     return nums
+
+def classify_input(input):
+    
+    return type
