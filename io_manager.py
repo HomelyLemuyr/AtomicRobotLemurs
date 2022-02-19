@@ -23,7 +23,7 @@ BIN_RE = "^[0-1]+$"
 
 # create the input dict and set each inputs value in the dict
 def get_inputs():
-    nums = []
+    nums = {"inputs": []}
     inputs = input("Please enter your digits: ")
     for i in inputs:
         if i != " ":
