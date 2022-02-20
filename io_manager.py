@@ -2,8 +2,10 @@
 import re
 
 # Regular Expressions for inputs
-HEX_RE = "0x[0-9,A-F,a-f]+$"
-BIN_RE = "^[0-1]+$"
+HEX_REG_EX = "0x[0-9,A-F,a-f]+$"
+BIN_REG_EX = "^[0-1]+$"
+FP_REG_EX = "^[-+]?[0-9]+\.[0-9]+$"
+DEC_REG_EX = "^[0-9]+$"
 
 # Make this list into a dict like this:
 """
@@ -33,9 +35,16 @@ def get_inputs():
 # take in the dict then set the type for each input
 def classify_input(input, inputs):
     for input in inputs:
-        if re.search(HEX_RE, input) is True:
+        if re.search(HEX_REG_EX, input) is True:
             # set inputx.type = hex
             pass
-        elif re.search(BIN_RE, input) is True:
+        elif re.search(BIN_REG_EX, input) is True:
             # set inputx.type = bin
+            pass
+        elif re.search(FP_REG_EX, input) is True:
+            # self.input.type = float
+            pass
+        elif re.search(DEC_REG_EX, input) is True:
+            # self.input.type = decimal
+            pass
     return inputs

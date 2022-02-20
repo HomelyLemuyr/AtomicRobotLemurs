@@ -24,9 +24,18 @@ class DataManager:
         pass
 
     def xor(self, val1, val2):
-        ret = val1 ^ val2
-        return ret
+        return val1 ^ val2
 
     def multiply(self, val1, val2):
-        mult = val1 * val2
-        return mult
+        return val1 * val2
+
+    def and_op(self, val1, val2):
+        return val1 & val2
+
+    def sub(self, val1, val2):
+        return val1 - val2
+
+    def div(self, val1, val2):
+        return val1 / val2
+
+    

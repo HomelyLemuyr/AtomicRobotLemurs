@@ -1,3 +1,13 @@
+"""
+Dev Environment:
+    OS: MacBook Pro M1 Chip
+    Atom Text Editor
+    Language: Python 3.8.9
+    Run in Terminal/Command line
+
+"""
+
+
 import os
 import time
 from data_manager import DataManager
