@@ -6,40 +6,23 @@ HEX_REG_EX = r"^0x[0-9a-fA-F]+$"
 BIN_REG_EX = r"^[0-1]+$"
 FP_REG_EX  = r"^[-+]?[0-9]+\.[0-9]+$"
 
-# Make this list into a dict like this:
-"""
- {
-    inputs: [
-        'input1': {
-            'type': 'hex',
-            'value': '0x19AC'
-        },
-        'input2': {
-            'type': 'hex',
-            'value': '0xFFFF'
-        }
-    ]
-}
-"""
-input1_dict = {'value': '', 'type': ''}
-
-# May have to make an empty one then push new dict per input
-input_dict = { 'input1': { },
-               'input2': { }}
+# Mak one dict the main input holder. The other will be overwritten as we add new inputs
+input_dict = {}
+holding_dict = {}
 
 # create the input dict and set each inputs value in the dict
 def get_inputs():
     inputs = input("Please enter your digits: ")
     # We recieved a string. Need to split the string at the white space
     inputs = inputs.split()
-    print(f"This the inputs::{inputs}")
     id = 0
     for value in inputs:
-        print(value)
         type = classify_input(value)
-        print(f"This is the type::[{type}]")
-    print(input1_dict)
-    return True
+        holding_dict[f"input{id}"] = {'type': f'{type}',
+                                    'value': f'{value}'}
+        input_dict.update(holding_dict)
+        id +=1
+    return input_dict
 
 # take in the dict then set the type for each input
 def classify_input(input):
