@@ -46,6 +46,31 @@ class DataManager:
 
     def div(self, val1, val2):
         return val1 / val2
+    
+    #addition
+    def add(self, val1, val2):
+        return val1 + val2
+    
+    # not operation, not sure if that what it means or should we do val1!=val2 then true
+    def not_op(self, val1, val2):
+        if not val1 or not val2:
+            return False
+        elif
+            return True
+    
+    # or operation, will return first true value (fels lkie this one is redundant or I'm understanding it wrong)
+    def or_op(self, val1, val2):
+        return val1 or val2
+     
+    # will that work for shr and shl?
+    
+    def shr(self, val1, val2):
+        shiftVal = val1 >> val2
+        print ("Result of the right shift operation on {} by {} bits is {}.".format(val1, val2, shiftVal))  #need to make sure that shift does not exeed the length of the val1 
+    
+    def shr(self, val1, val2):
+        shiftVal = val1 << val2
+        print ("Result of the left shift operation on {} by {} bits is {}.".format(val1, val2, shiftVal))  #need to make sure that shift does not exeed the length of the val1
 
     # recieve a decimal and convert it to the correct formata
     def convert_to_output(self, output):
